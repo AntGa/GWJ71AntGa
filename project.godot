@@ -15,6 +15,10 @@ run/main_scene="res://scenes/World.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://scripts/global.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/tile_bit_tools/plugin.cfg", "res://addons/yuuy/plugin.cfg")

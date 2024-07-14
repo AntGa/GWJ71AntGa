@@ -4,7 +4,6 @@ class_name Player
 
 @onready var facing: String = "Right"
 @onready var InAction: bool = false
-@onready var weapon = $Weapon
+@onready var weaponCollision = $Weapon/weaponArea/CollisionShape2D
 
-func _physics_process(delta: float) -> void:
-	weapon.update_position(global_position, facing)
+

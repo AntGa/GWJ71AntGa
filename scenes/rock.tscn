@@ -1,17 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm6g7vv5hyvtu"]
+[gd_scene load_steps=6 format=3 uid="uid://bm6g7vv5hyvtu"]
 
 [ext_resource type="Texture2D" uid="uid://rjdxnxjfcqix" path="res://Assets/Sprout Lands - Sprites - premium pack/Objects/rock.png" id="1_bv4yr"]
 [ext_resource type="Script" path="res://utility/components/HealthComponent.gd" id="2_3rwhw"]
 [ext_resource type="Script" path="res://utility/components/HitboxComponent.gd" id="3_xvqrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrrm1"]
-size = Vector2(22, 20)
+size = Vector2(20, 18)
 
-[node name="Rock" type="Sprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu7l2"]
+size = Vector2(20, 19)
+
+[node name="Rock" type="RigidBody2D"]
+
+[node name="RockSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_bv4yr")
 
-[node name="HealthComponent" type="Node2D" parent="."]
+[node name="HealthComponent" type="Node2D" parent="." node_paths=PackedStringArray("rock")]
 script = ExtResource("2_3rwhw")
+rock = NodePath("../RockSprite")
 
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 script = ExtResource("3_xvqrf")
@@ -19,3 +25,7 @@ health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_rrrm1")
+debug_color = Color(0.619608, 0.513726, 0.396078, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yu7l2")

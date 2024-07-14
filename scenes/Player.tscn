@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://scripts/Player/States/PlayerMove.gd" id="6_3smqu"]
 [ext_resource type="Script" path="res://scripts/Player/States/PlayerMine.gd" id="7_vypa2"]
 [ext_resource type="Script" path="res://scripts/Player/AnimationController.gd" id="8_t88ku"]
-[ext_resource type="Script" path="res://scenes/Weapon.gd" id="9_ucgpg"]
+[ext_resource type="Script" path="res://scripts/Weapon.gd" id="9_s00la"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ljpra"]
 atlas = ExtResource("2_efehx")
@@ -539,7 +539,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"PlayerMineDown",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -568,7 +568,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"PlayerMineLeft",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -597,7 +597,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"PlayerMineRight",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -626,7 +626,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"PlayerMineUp",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -756,7 +756,7 @@ script = ExtResource("1_pkfic")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l1pcw")
-animation = &"PlayerIdleDown"
+animation = &"PlayerMineDown"
 
 [node name="PMovementComponent" type="Node" parent="."]
 script = ExtResource("1_a2d7p")
@@ -777,24 +777,30 @@ script = ExtResource("6_3smqu")
 script = ExtResource("7_vypa2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+visible = false
+zoom = Vector2(3.5, 3.5)
+position_smoothing_speed = 7.0
+rotation_smoothing_speed = 7.0
 
 [node name="AnimationController" type="Node" parent="." node_paths=PackedStringArray("animations", "movement_component")]
 script = ExtResource("8_t88ku")
 animations = NodePath("../AnimatedSprite2D")
 movement_component = NodePath("../PMovementComponent")
 
-[node name="Weapon" type="Node2D" parent="."]
-script = ExtResource("9_ucgpg")
+[node name="Weapon" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("9_s00la")
+player = NodePath("..")
 
-[node name="Weapon" type="Area2D" parent="Weapon"]
+[node name="weaponArea" type="Area2D" parent="Weapon"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Weapon"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/weaponArea"]
 position = Vector2(5.625, -2.07629e-07)
 rotation = -3.14159
 shape = SubResource("RectangleShape2D_sqmmd")
+disabled = true
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uumnq")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimationController" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Weapon/weaponArea" to="Weapon" method="_on_weapon_area_entered"]
