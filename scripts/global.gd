@@ -8,6 +8,4 @@ func _ready() -> void:
 func add_money() -> void:
 	counter += 1
 
-func _process(delta: float) -> void:
-	pass
-	
+
