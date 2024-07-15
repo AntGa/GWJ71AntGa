@@ -8,8 +8,14 @@ var upgrade_cost: int = 5
 var money_generation_rate: float = 1.0  # Money per second when upgrade is active
 var time_since_last_money_generation: float = 0.0
 
+var lights_on_state = false
+
+signal light_status(status: bool)
+
+
 func _ready() -> void:
-	pass
+	light_status.emit(false)
+	
 	
 func add_money(amount: int) -> void:
 	money += amount
@@ -27,10 +33,12 @@ func deduct_money(amount: int) -> bool:
 # Updates the time system and handles money generation
 func _process(delta: float) -> void:
 	time_passed += delta
+	
 	if time_passed >= day_length:
 		time_passed = 0.0
 		on_new_day()
-	print("Time Passed:", time_passed)
+	#print("Time Passed:", time_passed)
+	update_lights()
 	
 	# Generate money automatically if upgrade is active
 	if upgrade_active:
@@ -39,6 +47,14 @@ func _process(delta: float) -> void:
 			add_money(1)  # Increase money
 			time_since_last_money_generation = 0.0  # Reset timer
 
+func update_lights() -> void:
+	if time_passed > 5 and !lights_on_state:
+		light_status.emit(true)
+		lights_on_state = true
+	elif time_passed <= 5 and lights_on_state:
+		emit_signal("lights_off")
+		light_status.emit(false)
+		
 # Handles the transition to a new day
 func on_new_day() -> void:
 	print("A new day has begun!")
@@ -47,3 +63,4 @@ func activate_upgrade() -> void:
 	if !upgrade_active and deduct_money(upgrade_cost):
 		upgrade_active = true
 		print("Automatic money generation activated!")
+

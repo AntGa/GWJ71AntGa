@@ -33,6 +33,6 @@ func start_vibration():
 func flash_color():
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property(rock, "modulate", Color(1, 1, 1), 0.1).as_relative().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(rock, "modulate", Color.WHITE, 0.)
+	tween.tween_property(rock, "modulate", Color.WHITE, 0.1)
 
 

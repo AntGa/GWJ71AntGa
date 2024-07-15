@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsp3ba0dot77k"]
+
+[ext_resource type="Script" path="res://scripts/lamp.gd" id="1_0hdam"]
+[ext_resource type="Texture2D" uid="uid://c80b52u5fvkcd" path="res://Assets/lampo.png" id="1_1bcua"]
+[ext_resource type="Texture2D" uid="uid://vwtt3wdvqp7s" path="res://Assets/light.png" id="2_il68m"]
+
+[node name="Lamp" type="Node2D"]
+script = ExtResource("1_0hdam")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1bcua")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.4
+texture = ExtResource("2_il68m")
+texture_scale = 0.65
