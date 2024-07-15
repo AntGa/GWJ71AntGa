@@ -13,3 +13,6 @@ func _physics_process(delta: float) -> void:
 	if movement_component.wants_mine():
 		transitioned.emit(self, "PlayerMine")
 		return
+	
+	if movement_component.wants_upgrade():
+		GameManager.activate_upgrade()

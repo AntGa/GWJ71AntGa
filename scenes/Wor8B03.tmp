@@ -21,24 +21,8 @@ texture = SubResource("CompressedTexture2D_n5j8y")
 [node name="Rock" parent="." instance=ExtResource("3_nwibw")]
 position = Vector2(49, 22)
 
-[node name="Rock2" parent="." instance=ExtResource("3_nwibw")]
-position = Vector2(49, 22)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 10
-anchor_right = 1.0
+[node name="TimeLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
 offset_bottom = 23.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 200
-alignment = 1
-
-[node name="TimeLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-
-[node name="MoneyLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]

@@ -7,3 +7,6 @@ func get_movement_direction() -> Vector2:
 # Return a boolean indicating if the character wants to jump
 func wants_mine() -> bool:
 	return Input.is_action_just_pressed('mine')
+
+func wants_upgrade() -> bool:
+	return Input.is_action_just_pressed("upgrade")

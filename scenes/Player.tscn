@@ -777,7 +777,6 @@ script = ExtResource("6_3smqu")
 script = ExtResource("7_vypa2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 zoom = Vector2(3.5, 3.5)
 position_smoothing_speed = 7.0
 rotation_smoothing_speed = 7.0

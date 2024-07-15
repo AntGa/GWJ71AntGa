@@ -22,7 +22,7 @@ func damage(attack: Attack):
 		# Trigger vibration effect
 		start_vibration()
 		flash_color()
-		Global.add_money()
+		GameManager.add_money(1)
 		
 func start_vibration():
 	var origin = rotation_degrees
@@ -32,7 +32,7 @@ func start_vibration():
 
 func flash_color():
 	var tween: Tween = get_tree().create_tween()
-	tween.tween_property(rock, "modulate", Color(1, 1, 1), 0.2).as_relative().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(rock, "modulate", Color.WHITE, 0.2)
+	tween.tween_property(rock, "modulate", Color(1, 1, 1), 0.1).as_relative().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(rock, "modulate", Color.WHITE, 0.)
 
 
