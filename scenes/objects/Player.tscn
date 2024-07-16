@@ -749,14 +749,16 @@ animations = [{
 size = Vector2(18.75, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uumnq"]
-size = Vector2(14, 16)
+size = Vector2(9, 13)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_pkfic")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l1pcw")
-animation = &"PlayerMineDown"
+animation = &"PlayerIdleDown"
+frame = 6
+frame_progress = 0.362901
 
 [node name="PMovementComponent" type="Node" parent="."]
 script = ExtResource("1_a2d7p")
@@ -799,6 +801,7 @@ shape = SubResource("RectangleShape2D_sqmmd")
 disabled = true
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_uumnq")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimationController" method="_on_animated_sprite_2d_animation_finished"]

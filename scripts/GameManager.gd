@@ -60,7 +60,7 @@ func on_new_day() -> void:
 	print("A new day has begun!")
 	
 func activate_upgrade() -> void:
-	if !upgrade_active and deduct_money(upgrade_cost):
+	if !upgrade_active:
 		upgrade_active = true
 		print("Automatic money generation activated!")
 

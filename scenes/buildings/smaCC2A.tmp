@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://b360piv5txti"]
+
+[ext_resource type="Texture2D" uid="uid://cmehgydjsnngq" path="res://Assets/Sprout Lands - Sprites - premium pack/Objects/signs.png" id="1_6ife2"]
+[ext_resource type="Script" path="res://scripts/Buildings/small_barn.gd" id="1_07xk4"]
+[ext_resource type="Texture2D" uid="uid://ch1ieh0w667ey" path="res://Assets/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Fences.png" id="2_inaeo"]
+[ext_resource type="Texture2D" uid="uid://c8gtml6qqoppw" path="res://Assets/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures/Barn structures.png" id="4_7gb64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_du8qb"]
+size = Vector2(20, 21)
+
+[sub_resource type="Animation" id="Animation_i7iuv"]
+resource_name = "BuildingFading"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Barn:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.427451), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_crtvw"]
+_data = {
+"BuildingFading": SubResource("Animation_i7iuv")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sjjmb"]
+texture = ExtResource("2_inaeo")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38pid"]
+texture = ExtResource("4_7gb64")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j6gx4"]
+sources/0 = SubResource("TileSetAtlasSource_sjjmb")
+sources/1 = SubResource("TileSetAtlasSource_38pid")
+
+[node name="Small_Barn" type="Node2D"]
+script = ExtResource("1_07xk4")
+
+[node name="Signs" type="Sprite2D" parent="."]
+position = Vector2(0, 58)
+texture = ExtResource("1_6ife2")
+region_enabled = true
+region_rect = Rect2(0.35858, 15.8971, 14.7484, 15.6477)
+
+[node name="Area2D" type="Area2D" parent="Signs"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Signs/Area2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_du8qb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_crtvw")
+}
+
+[node name="Barn" type="TileMap" parent="."]
+modulate = Color(1, 1, 1, 0)
+tile_set = SubResource("TileSet_j6gx4")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131073, 131072, 3, -196608, 131072, 3, -131074, 131072, 3, -131075, 65536, 0, -196606, 196608, 0, -196607, 131072, 3, -65539, 0, 1, -3, 0, 1, 65533, 0, 1, 131069, 0, 1, 196605, 65536, 2, 131074, 196608, 2, 65538, 0, 1, 2, 0, 1, -65534, 0, 1, -131070, 0, 1, 196606, 131072, 3, 196607, 131072, 3, 131072, 131072, 3, 131073, 131072, 3, -65538, 1, 0, 1, 65537, 2, 0, 1, 2)
+
+[connection signal="body_entered" from="Signs/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Signs/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

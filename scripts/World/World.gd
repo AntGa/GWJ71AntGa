@@ -1,6 +1,6 @@
 extends Node2D
 @onready var time_label: Label = $UI/TimeLabel
-@onready var money_label: Label = $UI/Container/MoneyLabel
+@onready var money_label: Label = $UI/MoneyLabel
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
 @export var day_length: float = 600.0  # Duration of a full day cycle in seconds
