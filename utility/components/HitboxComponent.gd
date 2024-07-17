@@ -1,5 +1,6 @@
 extends Area2D
-class_name HitboxComponent
+class_name HurtBoxComponent
+
 @export var health_component : HealthComponent
 
 func damage(attack: Attack):

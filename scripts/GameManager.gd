@@ -7,6 +7,7 @@ var upgrade_active: bool = false
 var upgrade_cost: int = 5
 var money_generation_rate: float = 1.0  # Money per second when upgrade is active
 var time_since_last_money_generation: float = 0.0
+var pickaxe_power: int = 1
 
 var lights_on_state = false
 
@@ -24,10 +25,8 @@ func add_money(amount: int) -> void:
 func deduct_money(amount: int) -> bool:
 	if money >= amount:
 		money -= amount
-		print("Money:", money)
 		return true
 	else:
-		print("Not enough money!")
 		return false
 
 # Updates the time system and handles money generation

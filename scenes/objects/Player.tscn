@@ -298,37 +298,37 @@ region = Rect2(304, 206, 16, 18)
 atlas = ExtResource("2_efehx")
 region = Rect2(352, 206, 16, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3k68o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdnf5"]
 atlas = ExtResource("2_efehx")
-region = Rect2(16, 159, 16, 18)
+region = Rect2(16, 352, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bdiq3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqjhr"]
 atlas = ExtResource("2_efehx")
-region = Rect2(64, 159, 16, 18)
+region = Rect2(64, 352, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_10mfv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7gvh"]
 atlas = ExtResource("2_efehx")
-region = Rect2(112, 159, 16, 18)
+region = Rect2(112, 352, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eyae7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_swyl2"]
 atlas = ExtResource("2_efehx")
-region = Rect2(160, 159, 16, 18)
+region = Rect2(160, 352, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7qmdj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgojx"]
 atlas = ExtResource("2_efehx")
-region = Rect2(208, 159, 16, 18)
+region = Rect2(208, 352, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvku7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qd0y"]
 atlas = ExtResource("2_efehx")
-region = Rect2(256, 159, 16, 18)
+region = Rect2(256, 352, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pik1g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lg4h"]
 atlas = ExtResource("2_efehx")
-region = Rect2(304, 159, 16, 18)
+region = Rect2(304, 352, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1nawc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yee8a"]
 atlas = ExtResource("2_efehx")
-region = Rect2(352, 159, 16, 18)
+region = Rect2(352, 352, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yb1cg"]
 atlas = ExtResource("2_efehx")
@@ -659,28 +659,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3k68o")
+"texture": SubResource("AtlasTexture_fdnf5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bdiq3")
+"texture": SubResource("AtlasTexture_jqjhr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_10mfv")
+"texture": SubResource("AtlasTexture_n7gvh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eyae7")
+"texture": SubResource("AtlasTexture_swyl2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7qmdj")
+"texture": SubResource("AtlasTexture_cgojx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wvku7")
+"texture": SubResource("AtlasTexture_3qd0y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pik1g")
+"texture": SubResource("AtlasTexture_5lg4h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1nawc")
+"texture": SubResource("AtlasTexture_yee8a")
 }],
 "loop": true,
 "name": &"PlayerWalkLeft",
@@ -756,9 +756,8 @@ script = ExtResource("1_pkfic")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l1pcw")
-animation = &"PlayerIdleDown"
-frame = 6
-frame_progress = 0.362901
+animation = &"PlayerWalkLeft"
+frame_progress = 0.888808
 
 [node name="PMovementComponent" type="Node" parent="."]
 script = ExtResource("1_a2d7p")

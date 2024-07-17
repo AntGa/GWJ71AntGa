@@ -12,7 +12,8 @@ func _ready() -> void:
 	
 func damage(attack: Attack):
 	health -= attack.damage
-
+	GameManager.add_money(attack.pickaxe_power)
+	
 	if health <= 0:
 		var tween: Tween = get_tree().create_tween()
 		tween.tween_property(rock, "modulate", Color(255,255,255, 0), 0.3)
@@ -22,7 +23,7 @@ func damage(attack: Attack):
 		# Trigger vibration effect
 		start_vibration()
 		flash_color()
-		GameManager.add_money(1)
+	
 		
 func start_vibration():
 	var origin = rotation_degrees

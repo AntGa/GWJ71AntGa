@@ -17,7 +17,6 @@ func _process(delta):
 	var minutes = remaining_time / 60
 	var seconds = remaining_time % 60
 
-
 	# Update the label text
 	time_label.text = str(minutes) + ":" + str(seconds)
 	 # Update the money label text

@@ -19,11 +19,11 @@ texture = ExtResource("1_bv4yr")
 script = ExtResource("2_3rwhw")
 rock = NodePath("../RockSprite")
 
-[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+[node name="HurtboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
 script = ExtResource("3_xvqrf")
 health_component = NodePath("../HealthComponent")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
 shape = SubResource("RectangleShape2D_rrrm1")
 debug_color = Color(0.619608, 0.513726, 0.396078, 0)
 
