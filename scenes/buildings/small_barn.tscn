@@ -175,7 +175,7 @@ script = ExtResource("1_07xk4")
 
 [node name="Signs" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(0, 58)
+position = Vector2(0.5, 56.5)
 texture = ExtResource("1_6ife2")
 region_enabled = true
 region_rect = Rect2(0.35858, 15.8971, 14.7484, 15.6477)
@@ -199,7 +199,7 @@ layer_0/tile_data = PackedInt32Array(-131073, 131073, 3, -196608, 131073, 3, -13
 
 [node name="UiSettingsButtons" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(0, 63)
+position = Vector2(0.5, 61.5)
 texture = ExtResource("5_qtk02")
 region_enabled = true
 region_rect = Rect2(6.17353, 85.1386, 19.7845, 20.6748)

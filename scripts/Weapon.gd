@@ -26,3 +26,6 @@ func _on_weapon_area_entered(area: Area2D) -> void:
 		attack.damage = 2.5
 		attack.pickaxe_power = pickaxe_power
 		area.damage(attack)
+
+func upgrade_pickaxe_power(increase: int) -> void:
+	pickaxe_power += increase

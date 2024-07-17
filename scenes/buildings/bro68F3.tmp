@@ -1,25 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://sx1h3m2ocp8k"]
+[gd_scene load_steps=7 format=3 uid="uid://sx1h3m2ocp8k"]
 
 [ext_resource type="Script" path="res://scripts/World/bronze_pickaxe.gd" id="1_3wna3"]
 [ext_resource type="Texture2D" uid="uid://x88mj4sbktjg" path="res://Assets/Sprout Lands - Sprites - premium pack/Objects/Items/tools-n-meterial-items.png" id="1_tog4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4ups"]
 size = Vector2(8.5, 10)
-
-[sub_resource type="Animation" id="Animation_r7vas"]
-resource_name = "ItemDissapear"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_oyrf3"]
 resource_name = "ItemFloat"
@@ -28,7 +13,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
+tracks/0/path = NodePath("Tools-n-meterial-items:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -43,7 +28,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
+tracks/0/path = NodePath("Tools-n-meterial-items:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -52,22 +37,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, -1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0oi32"]
 _data = {
-"ItemDissapear": SubResource("Animation_r7vas"),
 "ItemFloat": SubResource("Animation_oyrf3"),
 "RESET": SubResource("Animation_t1psj")
 }
@@ -75,19 +47,17 @@ _data = {
 [node name="BronzePickaxe" type="Node2D"]
 script = ExtResource("1_3wna3")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Tools-n-meterial-items" type="Sprite2D" parent="."]
 position = Vector2(1, -1)
 texture = ExtResource("1_tog4y")
 region_enabled = true
 region_rect = Rect2(16.9509, 0, 14.4255, 15.8642)
 
 [node name="PurchaseArea" type="Area2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PurchaseArea"]
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_c4ups")
-disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -96,4 +66,3 @@ libraries = {
 autoplay = "ItemFloat"
 
 [connection signal="body_entered" from="PurchaseArea" to="." method="_on_purchase_area_body_entered"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
