@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://lkwld43qgsid"]
 
 [ext_resource type="Script" path="res://scripts/SoundManager.gd" id="1_m81yj"]
-[ext_resource type="AudioStream" uid="uid://b5gdwjw3fnthn" path="res://Assets/sfx/sounds/tap.wav" id="2_qcixp"]
-[ext_resource type="AudioStream" uid="uid://0rru3icd6v6o" path="res://Assets/sfx/sounds/explosion.wav" id="3_0aohw"]
-[ext_resource type="AudioStream" uid="uid://ca4hicl2vouwv" path="res://Assets/sfx/sounds/Block Break 1.wav" id="4_clwrt"]
-[ext_resource type="AudioStream" uid="uid://clnpcq24auiom" path="res://Assets/sfx/sounds/08_Step_rock_02.wav" id="4_qa553"]
+[ext_resource type="AudioStream" uid="uid://b5gdwjw3fnthn" path="res://Assets/Audio/SFX/tap.wav" id="2_qcixp"]
+[ext_resource type="AudioStream" uid="uid://0rru3icd6v6o" path="res://Assets/Audio/SFX/explosion.wav" id="3_0aohw"]
+[ext_resource type="AudioStream" uid="uid://ca4hicl2vouwv" path="res://Assets/Audio/SFX/Block Break 1.wav" id="4_clwrt"]
+[ext_resource type="AudioStream" uid="uid://clnpcq24auiom" path="res://Assets/Audio/SFX/08_Step_rock_02.wav" id="4_qa553"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_m81yj")
@@ -12,14 +12,18 @@ script = ExtResource("1_m81yj")
 [node name="Tap" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_qcixp")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="Explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0aohw")
+bus = &"SFX"
 
 [node name="StepRock" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_qa553")
 volume_db = -2.262
+bus = &"SFX"
 
 [node name="BlockBreak" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_clwrt")
 volume_db = -21.855
+bus = &"SFX"

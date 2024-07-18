@@ -3,19 +3,28 @@ extends Control
 signal start_game()
 @onready var buttons_vbox: VBoxContainer = $MarginContainer/VBoxContainer/ButtonsVbox
 
-func _on_start_game_button_pressed() -> void:
+func _ready() -> void:
+	focus_button()
+	
+
+func focus_button() -> void:
+	if buttons_vbox:
+		var button: Button = buttons_vbox.get_child(0)
+		if button is Button:
+			button.grab_focus()	
+
+
+func _on_start_pressed() -> void:
 	start_game.emit()
+	TransitionManager.change_scene()
 	hide()
-	
-	
-func _on_quit_button_pressed() -> void:
+
+
+func _on_quit_pressed() -> void:
 	get_tree().quit()
 
-func
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_visibility_changed() -> void:
+	if visible:
+		focus_button()
+		

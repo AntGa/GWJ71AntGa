@@ -1,12 +1,16 @@
 extends Node2D
-@onready var time_label: Label = $UI/TimeLabel
-@onready var money_label: Label = $UI/MoneyLabel
+@onready var time_label: Label = $UI/Control/MarginContainer/VBoxContainer/HBoxContainer/TimeLabel
+@onready var money_label: Label = $UI/Control/MarginContainer/VBoxContainer/HBoxContainer/MoneyLabel
+@onready var ui: UI = $UI
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
 @export var day_length: float = 600.0  # Duration of a full day cycle in seconds
 @export var night_color: Color = Color(0, 0, 0.1, 0.5)  # Color during the night
 @export var day_color: Color = Color(1, 1, 1, 1) 
 
+func _ready() -> void:
+	ui.hide_pause_menu()
+	
 func _process(delta):
 	# Get the time passed from GameManager
 	var time_passed = GameManager.time_passed
