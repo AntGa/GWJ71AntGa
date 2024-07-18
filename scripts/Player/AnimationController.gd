@@ -6,7 +6,7 @@ var facing_vector: Vector2
 
 
 func _physics_process(delta: float) -> void:
-	facing_vector = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	facing_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
 	
 	if player.InAction:
 		return
