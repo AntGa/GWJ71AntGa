@@ -4,6 +4,7 @@ signal start_game()
 @onready var buttons_vbox: VBoxContainer = $MarginContainer/VBoxContainer/ButtonsVbox
 
 func _ready() -> void:
+	SoundManager.play_sound("FIRSTSNOW")
 	focus_button()
 	
 
