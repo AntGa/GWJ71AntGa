@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://lkwld43qgsid"]
+[gd_scene load_steps=7 format=3 uid="uid://lkwld43qgsid"]
 
 [ext_resource type="Script" path="res://scripts/SoundManager.gd" id="1_m81yj"]
 [ext_resource type="AudioStream" uid="uid://b5gdwjw3fnthn" path="res://Assets/Audio/SFX/tap.wav" id="2_qcixp"]
 [ext_resource type="AudioStream" uid="uid://0rru3icd6v6o" path="res://Assets/Audio/SFX/explosion.wav" id="3_0aohw"]
 [ext_resource type="AudioStream" uid="uid://ca4hicl2vouwv" path="res://Assets/Audio/SFX/Block Break 1.wav" id="4_clwrt"]
 [ext_resource type="AudioStream" uid="uid://clnpcq24auiom" path="res://Assets/Audio/SFX/08_Step_rock_02.wav" id="4_qa553"]
+[ext_resource type="AudioStream" uid="uid://8kxkg0i8ti30" path="res://Assets/Audio/Music/COZY and ETHEREAL Ambient Music Pack/3. FIRST SNOW.wav" id="6_311xi"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_m81yj")
@@ -27,3 +28,7 @@ bus = &"SFX"
 stream = ExtResource("4_clwrt")
 volume_db = -21.855
 bus = &"SFX"
+
+[node name="FIRSTSNOW" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_311xi")
+bus = &"MUSIC"
