@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://cdwqi3snffmtd"]
 
-[ext_resource type="Texture2D" uid="uid://ch1ieh0w667ey" path="res://Assets/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Fences.png" id="1_2n2ew"]
-[ext_resource type="Texture2D" uid="uid://c8gtml6qqoppw" path="res://Assets/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures/Barn structures.png" id="2_7efpr"]
-[ext_resource type="Texture2D" uid="uid://b30y53dbe6781" path="res://Assets/Sprout Lands - Sprites - premium pack/Animals/Cow/Light cow animations.png" id="3_gptib"]
-[ext_resource type="Texture2D" uid="uid://byudfpjjevftr" path="res://Assets/Sprout Lands - Sprites - premium pack/Animals/Chicken/chicken default.png" id="4_ppwbs"]
+[ext_resource type="Texture2D" uid="uid://ch1ieh0w667ey" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Fences.png" id="1_2n2ew"]
+[ext_resource type="Texture2D" uid="uid://c8gtml6qqoppw" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures/Barn structures.png" id="2_7efpr"]
+[ext_resource type="Texture2D" uid="uid://b30y53dbe6781" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Animals/Cow/Light cow animations.png" id="3_gptib"]
+[ext_resource type="Texture2D" uid="uid://byudfpjjevftr" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Animals/Chicken/chicken default.png" id="4_ppwbs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3vm7"]
 texture = ExtResource("1_2n2ew")

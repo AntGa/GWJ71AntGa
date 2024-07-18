@@ -23,6 +23,6 @@ func _process(delta):
 	money_label.text = "Money: $" + str(GameManager.money)
 
 	 # Update the canvas modulate color based on time of day
-	var t = time_passed / GameManager.day_length  # Normalized time of day [0, 1]
-	var modulate_color = day_color.lerp(night_color, sin(t * PI))
-	canvas_modulate.color = modulate_color
+	#var t = time_passed / GameManager.day_length  # Normalized time of day [0, 1]
+	#var modulate_color = day_color.lerp(night_color, sin(t * PI))
+	#canvas_modulate.color = modulate_color

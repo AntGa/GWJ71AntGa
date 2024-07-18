@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://utility/components/MovementComponent.gd" id="1_a2d7p"]
 [ext_resource type="Script" path="res://scripts/Player/Player.gd" id="1_pkfic"]
-[ext_resource type="Texture2D" uid="uid://delcl2ane1xm8" path="res://Assets/Sprout Lands - Sprites - premium pack/Characters/Premium Charakter Spritesheet.png" id="2_efehx"]
+[ext_resource type="Texture2D" uid="uid://delcl2ane1xm8" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Characters/Premium Charakter Spritesheet.png" id="2_efehx"]
 [ext_resource type="Script" path="res://scripts/StateMachine.gd" id="5_56nva"]
 [ext_resource type="Script" path="res://scripts/Player/States/PlayerIdle.gd" id="5_ek64c"]
 [ext_resource type="Script" path="res://scripts/Player/States/PlayerMove.gd" id="6_3smqu"]

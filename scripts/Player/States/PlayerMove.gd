@@ -1,6 +1,6 @@
 extends PlayerState
 
-const SPEED: float = 200.0
+const SPEED: float = 150.0
 const FRICTION : float = 250.0
 var direction : Vector2 
 

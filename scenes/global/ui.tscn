@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://des66vgr54lli"]
 
-[ext_resource type="Texture2D" uid="uid://ohvq36sc11ic" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/UI Settings Buttons.png" id="1_rdvsq"]
+[ext_resource type="Texture2D" uid="uid://ohvq36sc11ic" path="res://Assets/Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/UI Settings Buttons.png" id="1_rdvsq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sgvfp"]
 font_size = 32

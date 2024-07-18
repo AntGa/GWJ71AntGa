@@ -13,7 +13,7 @@ func _ready() -> void:
 func damage(attack: Attack):
 	health -= attack.damage
 	GameManager.add_money(attack.pickaxe_power)
-	
+	SoundManager.play_sound("StepRock")
 	if health <= 0:
 		var tween: Tween = get_tree().create_tween()
 		tween.tween_property(rock, "modulate", Color(255,255,255, 0), 0.3)

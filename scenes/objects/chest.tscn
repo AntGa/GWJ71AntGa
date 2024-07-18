@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cy08764khs2jy"]
 
 [ext_resource type="Script" path="res://scenes/objects/chest.gd" id="1_ekmrx"]
-[ext_resource type="Texture2D" uid="uid://b07d1lp83bd2q" path="res://Assets/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Chest.png" id="1_gj2xy"]
+[ext_resource type="Texture2D" uid="uid://b07d1lp83bd2q" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Chest.png" id="1_gj2xy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyp7b"]
 atlas = ExtResource("1_gj2xy")

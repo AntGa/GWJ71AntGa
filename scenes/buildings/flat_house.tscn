@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnub2kk222myx"]
 
-[ext_resource type="Texture2D" uid="uid://b5mctju2ehnp8" path="res://Assets/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Wooden House.png" id="1_mbusv"]
+[ext_resource type="Texture2D" uid="uid://b5mctju2ehnp8" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Wooden House.png" id="1_mbusv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2cxwx"]
 texture = ExtResource("1_mbusv")

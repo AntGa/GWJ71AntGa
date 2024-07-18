@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvl0y7mpasp2"]
+
+[ext_resource type="PackedScene" uid="uid://b360piv5txti" path="res://scenes/buildings/small_barn.tscn" id="1_m3syh"]
+
+[node name="Small_Barn" instance=ExtResource("1_m3syh")]

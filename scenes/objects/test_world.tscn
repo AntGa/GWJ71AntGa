@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5p5tjkhe4xe1"]
+[gd_scene load_steps=10 format=3 uid="uid://0tcko3ivlddh"]
 
-[ext_resource type="Texture2D" uid="uid://l3vm5npn176u" path="res://Assets/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Darker_Grass_Hills_Tiles_v2.png" id="1_dn3vu"]
-[ext_resource type="Texture2D" uid="uid://dp4ticsi6kkw4" path="res://Assets/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Darker_Soil_Ground_Hills_Tiles.png" id="2_bicmn"]
-[ext_resource type="Texture2D" uid="uid://ibic6ayhpkcg" path="res://Assets/Sprout Lands - Sprites - premium pack/Objects/Mushrooms, Flowers, Stones.png" id="3_jkev6"]
+[ext_resource type="Texture2D" uid="uid://l3vm5npn176u" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Darker_Grass_Hills_Tiles_v2.png" id="1_dn3vu"]
+[ext_resource type="Texture2D" uid="uid://dp4ticsi6kkw4" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Darker_Soil_Ground_Hills_Tiles.png" id="2_bicmn"]
+[ext_resource type="Texture2D" uid="uid://ibic6ayhpkcg" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Objects/Mushrooms, Flowers, Stones.png" id="3_jkev6"]
+[ext_resource type="Texture2D" uid="uid://boyj3rp88njv7" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/woer.png" id="4_23ebg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fub5g"]
 texture = ExtResource("1_dn3vu")
@@ -1091,6 +1092,18 @@ texture = ExtResource("3_jkev6")
 11:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:4/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6680a"]
+resource_name = "water"
+texture = ExtResource("4_23ebg")
+0:0/animation_columns = 4
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_vgwlk"]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
@@ -1101,6 +1114,7 @@ terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_fub5g")
 sources/1 = SubResource("TileSetAtlasSource_xyopi")
 sources/2 = SubResource("TileSetAtlasSource_8mb22")
+sources/7 = SubResource("TileSetAtlasSource_6680a")
 
 [node name="WorldTileMap" type="TileMap"]
 tile_set = SubResource("TileSet_vgwlk")

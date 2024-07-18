@@ -1,0 +1,17 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://rm1fbc12r3vl"]
+
+[ext_resource type="Texture2D" uid="uid://cgnq2uv7ljh7b" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/water frames/Water_1.png" id="1_xh3tr"]
+[ext_resource type="Texture2D" uid="uid://kyf8o2rf7chi" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/water frames/Water_2.png" id="2_1m13y"]
+[ext_resource type="Texture2D" uid="uid://civyqbyax740d" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/water frames/Water_3.png" id="3_rh6h1"]
+[ext_resource type="Texture2D" uid="uid://b2ki8dypfk4kq" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/water frames/Water_4.png" id="4_h4658"]
+
+[resource]
+frames = 4
+frame_0/texture = ExtResource("1_xh3tr")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_1m13y")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_rh6h1")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("4_h4658")
+frame_3/duration = 0.1

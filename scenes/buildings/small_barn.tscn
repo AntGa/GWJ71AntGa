@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://b360piv5txti"]
 
-[ext_resource type="Texture2D" uid="uid://cmehgydjsnngq" path="res://Assets/Sprout Lands - Sprites - premium pack/Objects/signs.png" id="1_6ife2"]
+[ext_resource type="Texture2D" uid="uid://cmehgydjsnngq" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Objects/signs.png" id="1_6ife2"]
 [ext_resource type="Script" path="res://scripts/Buildings/small_barn.gd" id="1_07xk4"]
-[ext_resource type="Texture2D" uid="uid://ch1ieh0w667ey" path="res://Assets/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Fences.png" id="2_inaeo"]
-[ext_resource type="Texture2D" uid="uid://c8gtml6qqoppw" path="res://Assets/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures/Barn structures.png" id="4_7gb64"]
+[ext_resource type="Texture2D" uid="uid://ch1ieh0w667ey" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Fences.png" id="2_inaeo"]
+[ext_resource type="Texture2D" uid="uid://c8gtml6qqoppw" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures/Barn structures.png" id="4_7gb64"]
 [ext_resource type="Texture2D" uid="uid://bmwxge1jh2haa" path="res://Assets/vfx/Explosion_Sheet.png" id="5_0668i"]
-[ext_resource type="Texture2D" uid="uid://ohvq36sc11ic" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/UI Settings Buttons.png" id="5_qtk02"]
+[ext_resource type="Texture2D" uid="uid://ohvq36sc11ic" path="res://Assets/Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/UI Settings Buttons.png" id="5_qtk02"]
 [ext_resource type="PackedScene" uid="uid://cdwqi3snffmtd" path="res://scenes/buildings/physics_barn.tscn" id="6_4sr1h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_du8qb"]

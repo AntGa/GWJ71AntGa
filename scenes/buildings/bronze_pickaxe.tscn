@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://sx1h3m2ocp8k"]
 
 [ext_resource type="Script" path="res://scripts/World/bronze_pickaxe.gd" id="1_3wna3"]
-[ext_resource type="Texture2D" uid="uid://x88mj4sbktjg" path="res://Assets/Sprout Lands - Sprites - premium pack/Objects/Items/tools-n-meterial-items.png" id="1_tog4y"]
+[ext_resource type="Texture2D" uid="uid://x88mj4sbktjg" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Objects/Items/tools-n-meterial-items.png" id="2_5atmt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4ups"]
 size = Vector2(8.5, 10)
@@ -77,7 +77,7 @@ script = ExtResource("1_3wna3")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(1, -1)
-texture = ExtResource("1_tog4y")
+texture = ExtResource("2_5atmt")
 region_enabled = true
 region_rect = Rect2(16.9509, 0, 14.4255, 15.8642)
 
