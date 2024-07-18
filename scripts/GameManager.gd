@@ -32,7 +32,7 @@ func deduct_money(amount: int) -> bool:
 # Updates the time system and handles money generation
 func _process(delta: float) -> void:
 	time_passed += delta
-	print(Engine.get_frames_per_second())
+	
 	if time_passed >= day_length:
 		time_passed = 0.0
 		on_new_day()

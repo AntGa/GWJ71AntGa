@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dmdbbgkovcq1t"]
+[gd_scene load_steps=52 format=3 uid="uid://dmdbbgkovcq1t"]
 
 [ext_resource type="Script" path="res://scripts/World/World.gd" id="1_2rxm4"]
 [ext_resource type="Texture2D" uid="uid://cyoqyj4m6oct3" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Stone_Path.png" id="2_q17od"]
@@ -7,13 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cut0rpjy3swlx" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Wooden_Bridge_v2.png" id="4_24bvc"]
 [ext_resource type="PackedScene" uid="uid://bm6g7vv5hyvtu" path="res://scenes/objects/rock.tscn" id="4_j1xiv"]
 [ext_resource type="Texture2D" uid="uid://ibic6ayhpkcg" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Objects/Mushrooms, Flowers, Stones.png" id="4_vpenb"]
-[ext_resource type="PackedScene" uid="uid://des66vgr54lli" path="res://scenes/global/ui.tscn" id="5_hs0k6"]
 [ext_resource type="Texture2D" uid="uid://db64nhj6ykgu3" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Objects/Water Objects.png" id="5_k5uon"]
 [ext_resource type="Texture2D" uid="uid://ixecueehkhej" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Bush_Tiles.png" id="5_r2apo"]
 [ext_resource type="Texture2D" uid="uid://boyj3rp88njv7" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/woer.png" id="5_x6iad"]
 [ext_resource type="Texture2D" uid="uid://r5f5m7qswt3c" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Grass_Tile_Layers.png" id="6_3ub0u"]
 [ext_resource type="Texture2D" uid="uid://dc51w4y4e84ru" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Objects/Boats.png" id="6_v6gx3"]
-[ext_resource type="PackedScene" uid="uid://dsp3ba0dot77k" path="res://scenes/buildings/lamp.tscn" id="6_ytd2i"]
 [ext_resource type="Texture2D" uid="uid://dfjl0eo0vlsc" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Grass_Tile_layers2.png" id="7_kt4fy"]
 [ext_resource type="PackedScene" uid="uid://b360piv5txti" path="res://scenes/buildings/small_barn.tscn" id="7_xkh01"]
 [ext_resource type="Texture2D" uid="uid://cb7brpjd36spb" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Grass_Hill_Tiles_v2.png" id="8_q1ghi"]
@@ -28,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://c6j5loyjb14ii" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Tilled_Dirt_v2.png" id="15_5ysg6"]
 [ext_resource type="Texture2D" uid="uid://jv2lp1vbbcn5" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Soil_Ground_Tiles.png" id="15_7l60m"]
 [ext_resource type="Texture2D" uid="uid://ch1ieh0w667ey" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Fences.png" id="16_qm3ek"]
+[ext_resource type="PackedScene" uid="uid://bad5gm1muaeu5" path="res://scenes/UI/UI.tscn" id="27_d86gr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnj0y"]
 texture = ExtResource("2_q17od")
@@ -5133,9 +5132,6 @@ sources/21 = SubResource("TileSetAtlasSource_6037q")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n5j8y"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_twubp"]
-light_mode = 1
-
 [node name="World" type="Node2D"]
 script = ExtResource("1_2rxm4")
 
@@ -5173,18 +5169,10 @@ position = Vector2(49, 22)
 [node name="Rock2" parent="." instance=ExtResource("4_j1xiv")]
 position = Vector2(49, 22)
 
-[node name="UI" parent="." instance=ExtResource("5_hs0k6")]
-visible = false
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="Lamp" parent="CanvasLayer2" instance=ExtResource("6_ytd2i")]
-material = SubResource("CanvasItemMaterial_twubp")
-position = Vector2(-134, -11)
-
 [node name="SmallBarn" parent="." instance=ExtResource("7_xkh01")]
 position = Vector2(-207, -102)
 
 [node name="Chest" parent="." instance=ExtResource("9_3eomy")]
 position = Vector2(-175, 3)
+
+[node name="UI" parent="." instance=ExtResource("27_d86gr")]
