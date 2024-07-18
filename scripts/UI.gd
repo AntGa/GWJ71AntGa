@@ -8,7 +8,20 @@ signal start_game()
 @onready var MASTER_BUS = AudioServer.get_bus_index("Master")
 @onready var pause_menu: Control = $PauseMenu
 @onready var main_menu: Control = $MainMenu
+@onready var masterslider: HSlider = $PauseMenu/MarginContainer/VBoxContainer/GridContainer/MASTERSLIDER
+@onready var sfxslider: HSlider = $PauseMenu/MarginContainer/VBoxContainer/GridContainer/SFXSLIDER
+@onready var musicslider: HSlider = $PauseMenu/MarginContainer/VBoxContainer/GridContainer/MUSICSLIDER
+@onready var start_button: Button = $MainMenu/MarginContainer/VBoxContainer/ButtonsVbox/Start
 
+func _ready() -> void:
+	start_button.connect("pressed", _on_start_pressed)
+
+func _on_start_pressed() -> void:
+
+	masterslider.value = db_to_linear(AudioServer.get_bus_volume_db(MASTER_BUS))
+	sfxslider.value = db_to_linear(AudioServer.get_bus_volume_db(SFX_BUS))
+	musicslider.value = db_to_linear(AudioServer.get_bus_volume_db(MUSIC_BUS))
+	
 func _on_sfxslider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(SFX_BUS, linear_to_db(value))
 	AudioServer.set_bus_mute(SFX_BUS, value < 0.05)
@@ -34,3 +47,4 @@ func _on_quit_button_pressed() -> void:
 	
 func _on_main_menu_start_game() -> void:
 	start_game.emit()
+	

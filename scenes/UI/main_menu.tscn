@@ -55,18 +55,97 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 5
 focus_neighbor_top = NodePath("../Quit")
-focus_neighbor_bottom = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Options")
 text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVbox"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Quit")
+text = "Options
+"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVbox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 5
-focus_neighbor_top = NodePath("../Start")
+focus_neighbor_top = NodePath("../Options")
 focus_neighbor_bottom = NodePath("../Start")
 text = "Quit Game
 "
 
+[node name="AUDIOCONTROLLER" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_right = 256
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AUDIOCONTROLLER"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="AUDIOCONTROLLER/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="MASTERLABEL" type="Label" parent="AUDIOCONTROLLER/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="MASTERSLIDER" type="HSlider" parent="AUDIOCONTROLLER/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXLABEL" type="Label" parent="AUDIOCONTROLLER/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "SFX
+"
+
+[node name="SFXSLIDER" type="HSlider" parent="AUDIOCONTROLLER/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MUSICLABEL" type="Label" parent="AUDIOCONTROLLER/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Music
+"
+
+[node name="MUSICSLIDER" type="HSlider" parent="AUDIOCONTROLLER/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AUDIOCONTROLLER/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="QuitButton" type="Button" parent="AUDIOCONTROLLER/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+text = "Back"
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVbox/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVbox/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVbox/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="AUDIOCONTROLLER/VBoxContainer/GridContainer/MASTERSLIDER" to="." method="_on_masterslider_value_changed"]
+[connection signal="value_changed" from="AUDIOCONTROLLER/VBoxContainer/GridContainer/SFXSLIDER" to="." method="_on_sfxslider_value_changed"]
+[connection signal="value_changed" from="AUDIOCONTROLLER/VBoxContainer/GridContainer/MUSICSLIDER" to="." method="_on_musicslider_value_changed"]
+[connection signal="pressed" from="AUDIOCONTROLLER/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
