@@ -77,7 +77,7 @@ offset_top = 16.0
 offset_bottom = 16.0
 
 [node name="ButtonE" type="Sprite2D" parent="Container"]
-position = Vector2(0, -35)
+position = Vector2(0, -33)
 texture = ExtResource("3_ge7hx")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

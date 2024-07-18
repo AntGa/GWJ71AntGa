@@ -1,6 +1,6 @@
 extends Node
 
-var money: int = 0
+var money: int = 10
 var time_passed: float = 0.0
 var day_length: float = 300.0  # Length of a day in seconds (5 minutes)
 var upgrade_active: bool = false

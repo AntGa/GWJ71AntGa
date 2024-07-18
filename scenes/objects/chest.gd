@@ -1,21 +1,28 @@
-extends Node2D
+extends Interactable
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var tap: AudioStreamPlayer2D = $Tap
+@onready var container: Control = $Container
 
 var item_scene: PackedScene = preload("res://scenes/buildings/bronze_pickaxe.tscn")
-var opened: bool = false
+@export var opened: bool = false
 var in_area: bool = false
+
+func _ready() -> void:
+	Interact_UI = container
+	hide_interact()
 
 func _process(delta: float) -> void:
 	if not in_area:
 		return
 	if Input.is_action_just_pressed("interact"):
-		sprite.play("ChestOpen")
+		on_open_chest()
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	spawn_item(2)
-
+	
+func on_open_chest() -> void:
+	sprite.play("ChestOpen")
+	hide_interact()
 
 func spawn_item(amount: int) -> void:
 	for i in range(amount):
@@ -34,9 +41,15 @@ func spawn_item(amount: int) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if not (body is Player):
+		return
 	if !opened:
 		in_area = true
+		show_interact()
 		
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	if not (body is Player):
+		return
 	in_area = false
+	hide_interact()
 

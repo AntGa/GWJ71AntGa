@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cy08764khs2jy"]
+[gd_scene load_steps=13 format=3 uid="uid://cy08764khs2jy"]
 
 [ext_resource type="Script" path="res://scenes/objects/chest.gd" id="1_ekmrx"]
 [ext_resource type="Texture2D" uid="uid://b07d1lp83bd2q" path="res://Assets/Art/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Chest.png" id="1_gj2xy"]
@@ -53,6 +53,8 @@ size = Vector2(28, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jwna"]
 size = Vector2(12, 17)
 
+[sub_resource type="GDScript" id="GDScript_mquxn"]
+
 [node name="Chest" type="StaticBody2D"]
 script = ExtResource("1_ekmrx")
 
@@ -75,9 +77,10 @@ layout_mode = 3
 anchors_preset = 0
 offset_top = 16.0
 offset_bottom = 16.0
+script = SubResource("GDScript_mquxn")
 
 [node name="ButtonE" type="Sprite2D" parent="Container"]
-position = Vector2(0, -35)
+position = Vector2(0, -33)
 texture = ExtResource("3_ge7hx")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
